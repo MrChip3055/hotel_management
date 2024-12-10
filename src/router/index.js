@@ -3,6 +3,8 @@ import Login from "@/components/views/Login.vue";
 import RoomInfoManagement from '@/components/views/RoomInfoManagement.vue';
 import SideNav from '@/components/EmployeeSideNav.vue';
 import EmployChekIn from "@/components/views/EmployChekIn.vue";
+import EmployQuit from "@/components/views/EmployQuit.vue";
+import EmployBills from "@/components/views/EmployBills.vue";
 import UserManagement from '@/components/views/UserLayout.vue'; // 假设你已经创建了UserManagement组件
 
 const routes = [
@@ -32,6 +34,14 @@ const routes = [
             {
                 path:'employeecheckin',
                 component: EmployChekIn,
+            },
+            {
+                path:'employeequit',
+                component: EmployQuit,
+            },
+            {
+                path:'employeebills',
+                component: EmployBills,
             }
         ]
     },
