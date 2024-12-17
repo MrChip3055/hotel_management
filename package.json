@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@mdui/icons": "^1.0.2",
+    "axios": "^1.7.9",
     "element": "^0.1.4",
     "element-plus": "^2.9.0",
     "mdui": "^2.1.3",

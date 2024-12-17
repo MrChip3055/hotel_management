@@ -2,10 +2,11 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Login from "@/components/views/Login.vue";
 import RoomInfoManagement from '@/components/views/RoomInfoManagement.vue';
 import SideNav from '@/components/EmployeeSideNav.vue';
-import EmployChekIn from "@/components/views/EmployChekIn.vue";
-import EmployQuit from "@/components/views/EmployQuit.vue";
+import EmployCheckIn from "@/components/views/EmployChekIn.vue";
 import EmployBills from "@/components/views/EmployBills.vue";
-import UserManagement from '@/components/views/UserLayout.vue'; // 假设你已经创建了UserManagement组件
+import Dashboard from "@/components/views/Dashboard.vue";
+import AdministratorView from "@/components/views/AdministratorView.vue";
+import EmployCheckOut from "@/components/views/EmployCheckOut.vue";
 
 const routes = [
     // 默认路由跳转到登录页
@@ -21,36 +22,34 @@ const routes = [
         children: [
             {
                 path: '',
-                redirect: '/employee/roominfo' // 默认跳转到 roominfo 页面
+                redirect: '/employee/dashboard',
             },
             {
                 path: 'roominfo',
                 component: RoomInfoManagement, // 房间信息管理页面
             },
             {
-                path: 'side',
-                component: SideNav, // 侧边导航栏组件
-            },
-            {
                 path:'employeecheckin',
-                component: EmployChekIn,
+                component: EmployCheckIn,
             },
             {
-                path:'employeequit',
-                component: EmployQuit,
+                path:'employeecheckout',
+                component: EmployCheckOut,
             },
             {
                 path:'employeebills',
                 component: EmployBills,
+            },
+            {
+                path:'dashboard',
+                component: Dashboard,
+            },
+            {
+                path:'administrator',
+                component: AdministratorView,
             }
         ]
     },
-
-    // 用户管理路由
-    {
-        path: '/user',
-        component: UserManagement, // 用户管理页面
-    }
 ];
 
 const router = createRouter({

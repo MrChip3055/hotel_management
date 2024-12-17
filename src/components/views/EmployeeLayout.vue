@@ -2,7 +2,11 @@
   <div class="employee-layout">
     <SideNav /> <!-- 显示侧边导航栏 -->
     <el-main>
-      <router-view /> <!-- 渲染子路由内容 -->
+      <keep-alive>
+
+        <router-view />
+
+      </keep-alive>
     </el-main>
   </div>
 </template>

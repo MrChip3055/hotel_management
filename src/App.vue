@@ -1,5 +1,7 @@
 <template>
-  <router-view /> <!-- 渲染路由内容 -->
+  <keep-alive>
+    <router-view />
+  </keep-alive>
 </template>
 
 <script>
