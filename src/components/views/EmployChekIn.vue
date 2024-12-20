@@ -41,8 +41,14 @@
             :filter-method="filterStatus"
         >
           <template #default="scope">
-            <el-tag :type="scope.row.status === '空房' ? 'success' : 'info'">{{ scope.row.status }}</el-tag>
+            <el-tag
+                :type="getTagType(scope.row.status)"
+                :key="scope.row.id"
+            >
+              {{ scope.row.status }}
+            </el-tag>
           </template>
+
         </el-table-column>
       </el-table>
     </div>
@@ -119,6 +125,18 @@ export default {
     )
   },
   methods: {
+    getTagType(status) {
+      switch (status) {
+        case '空房':
+          return 'success';  // 空房使用绿色
+        case '已入住':
+          return 'warning';  // 已入住使用橙色
+        case '已预定':
+          return 'info';     // 已预定使用蓝色
+        default:
+          return 'default';  // 其他状态使用默认样式 (可选值为 'success', 'info', 'warning', 'danger')
+      }
+    },
     handleSubmit() {
       this.$refs.checkInForm.validate((valid) => {
         if (valid) {

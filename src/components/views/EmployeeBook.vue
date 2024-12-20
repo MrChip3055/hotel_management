@@ -77,6 +77,11 @@ export default {
         })
   },
   methods: {
+    formatDate(row, column, cellValue, index) {
+      if (!cellValue) return "";
+      const date = new Date(cellValue);
+      return date.toLocaleString(); // 你也可以自定义格式
+    },
     submitReservation() {
       this.$refs.reservationForm.validate((valid) => {
         if (valid) {
@@ -167,8 +172,6 @@ export default {
     }
   }
 }
-
-
 </script>
 
 <template>
@@ -233,15 +236,15 @@ export default {
       </div>
       <!-- 左侧表格 -->
       <div class="table-section">
-        <el-table :data="filteredReservations" style="width: 100%">
-          <!-- 搜索框 -->
-          <el-input
-              v-model="search"
-              size="small"
-              placeholder="输入用户名搜索"
-              clearable
-              class="search-bar"
-          />
+        <!-- 搜索框 -->
+        <el-input
+            v-model="search"
+            size="large"
+            placeholder="输入用户姓名搜索"
+            clearable
+            class="search-bar"
+        />
+        <el-table :data="filteredReservations" style="width: 100% ; margin-top: 20px" >
           <!-- 房型 -->
           <el-table-column label="房型" prop="roomType" />
           <!-- 房间号 -->
@@ -251,9 +254,9 @@ export default {
           <!-- 电话号 -->
           <el-table-column label="电话号" prop="phone" />
           <!-- 预定时间 -->
-          <el-table-column label="预定时间" prop="bookTime" />
+          <el-table-column label="预定时间" prop="bookTime" :formatter="formatDate" />
           <!-- 过期时间 -->
-          <el-table-column label="过期时间" prop="outTime" />
+          <el-table-column label="过期时间" prop="outTime" :formatter="formatDate" />
 
           <!-- 操作 -->
           <el-table-column label="操作" align="center">

@@ -79,7 +79,6 @@
 </template>
 
 <script>
-import SideNav from "@/components/EmployeeSideNav.vue";
 import {listRoomType} from "@/services/room.js";
 import{newRoom} from "@/services/room.js";
 import {newRoomType} from "@/services/room.js";
