@@ -53,6 +53,7 @@ import { roomTypeD } from "@/utils/dists";
 export default {
   data() {
     return {
+      rtDist: roomTypeD(),
       billData: [], // 用于存储账单数据
       searchQuery: "", // 搜索框绑定的查询条件
     };
@@ -85,7 +86,7 @@ export default {
               .map((bill) => ({
                 name: bill.name,
                 roomId: bill.roomId, // 房间号
-                typeName: roomTypeD()[bill.typeName], // 房型
+                typeName: this.rtDist[bill.typeName], // 房型
                 amount: bill.amount, // 账单金额
                 inTime: new Date(bill.inTime).toLocaleString(), // 入住日期
                 outTime: new Date(bill.outTime).toLocaleString(), // 离开日期

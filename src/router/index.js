@@ -7,6 +7,7 @@ import EmployBills from "@/components/views/EmployBills.vue";
 import Dashboard from "@/components/views/Dashboard.vue";
 import AdministratorView from "@/components/views/AdministratorView.vue";
 import EmployCheckOut from "@/components/views/EmployCheckOut.vue";
+import EmployeeBook from "@/components/views/EmployeeBook.vue";
 
 const routes = [
     // 默认路由跳转到登录页
@@ -43,6 +44,10 @@ const routes = [
             {
                 path:'dashboard',
                 component: Dashboard,
+            },
+            {
+                path:'employeebook',
+                component: EmployeeBook,
             },
             {
                 path:'administrator',

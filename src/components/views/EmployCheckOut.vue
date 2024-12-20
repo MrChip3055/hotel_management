@@ -188,6 +188,7 @@ export default {
 
 .check-out-container, .room-table-container {
   flex: 2; /* 平均分配空间 */
+  height: 60%;
   min-height: 500px; /* 设置最小高度 */
   max-width:600px;
   padding: 20px;
@@ -199,4 +200,5 @@ export default {
   box-sizing: border-box;
 
 }
+
 </style>

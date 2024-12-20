@@ -6,6 +6,7 @@ import '@mdui/icons/attach-money.js';
 import '@mdui/icons/search.js';
 import '@mdui/icons/manage-accounts.js';
 import '@mdui/icons/logout.js';
+import '@mdui/icons/book.js';
 import { useRoute, useRouter } from "vue-router";
 import {getRole} from "@/services/admin.js";
 
@@ -59,6 +60,14 @@ export default {
   </mdui-navigation-rail-item>
 
   <mdui-navigation-rail-item
+    value="/employee/employeebook"
+    @click="navigateTo('/employee/employeebook')"
+    >
+    <mdui-icon-book slot="icon"></mdui-icon-book>
+    预定房间
+  </mdui-navigation-rail-item>
+
+  <mdui-navigation-rail-item
       value="/employee/employeecheckin"
       @click="navigateTo('/employee/employeecheckin')"
   >
@@ -109,7 +118,7 @@ export default {
 }
 
 #logout-rail{
-  margin-top: 80px;
+  margin-top: 120px;
 }
 
 </style>
